@@ -1,0 +1,17 @@
+
+<div class="row" style="margin-bottom: 8px;margin-top: 8px;">
+  <div class="col-12">
+    <div class="row">
+      <span class="col-3">Aggregate by: </span>
+      <section class="col-9">
+        <form [formGroup]="form" novalidate class="row">
+          <div *ngFor="let by of aggregateByOptions; let i=index" class="col-4">
+            {{by.name}}
+            <input type="checkbox" formArrayName="selectedBy" name="selectedBy" ngDefaultControl [value]="by.value" (change)="onSelectedChange($event)"
+            />
+          </div>
+        </form>
+      </section>
+    </div>
+  </div>
+</div>
